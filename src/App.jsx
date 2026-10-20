@@ -5,7 +5,14 @@ import Filtros from './components/Filtros.jsx'
 import ListaProductos from './components/ListaProductos.jsx'
 import DetalleProducto from './components/DetalleProducto.jsx'
 import Carrito from './components/Carrito.jsx'
+import Aviso from './components/Aviso.jsx'
 import PiePagina from './components/PiePagina.jsx'
+
+// Lee el carrito guardado en el navegador (o una lista vacía si no hay nada)
+function carritoGuardado() {
+  const texto = localStorage.getItem('carrito')
+  return texto ? JSON.parse(texto) : []
+}
 
 function App() {
   // Productos que llegan del archivo public/productos.json
@@ -21,8 +28,9 @@ function App() {
   const [seleccionado, setSeleccionado] = useState(null)
 
   // Carrito de compras
-  const [carrito, setCarrito] = useState([])
+  const [carrito, setCarrito] = useState(carritoGuardado)
   const [carritoAbierto, setCarritoAbierto] = useState(false)
+  const [aviso, setAviso] = useState('')
 
   // Cargar los productos una sola vez, cuando se abre la página
   useEffect(() => {
@@ -33,6 +41,11 @@ function App() {
         setCargando(false)
       })
   }, [])
+
+  // Guardar el carrito en el navegador cada vez que cambie
+  useEffect(() => {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+  }, [carrito])
 
   // Productos que se muestran según los filtros elegidos
   const texto = busqueda.trim().toLowerCase()
@@ -67,6 +80,7 @@ function App() {
       setCarrito([...carrito, nuevo])
     }
     setSeleccionado(null)
+    setAviso(`${producto.nombre} (talla ${talla}) se agregó al carrito`)
   }
 
   function cambiarCantidad(itemCambiado, cambio) {
@@ -114,6 +128,7 @@ function App() {
           onQuitar={quitarDelCarrito}
         />
       )}
+      <Aviso mensaje={aviso} onOcultar={setAviso} />
     </div>
   )
 }
