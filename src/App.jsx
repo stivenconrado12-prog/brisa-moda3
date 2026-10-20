@@ -5,6 +5,7 @@ import Filtros from './components/Filtros.jsx'
 import ListaProductos from './components/ListaProductos.jsx'
 import DetalleProducto from './components/DetalleProducto.jsx'
 import Carrito from './components/Carrito.jsx'
+import FormularioPedido from './components/FormularioPedido.jsx'
 import Aviso from './components/Aviso.jsx'
 import PiePagina from './components/PiePagina.jsx'
 
@@ -31,6 +32,7 @@ function App() {
   const [carrito, setCarrito] = useState(carritoGuardado)
   const [carritoAbierto, setCarritoAbierto] = useState(false)
   const [aviso, setAviso] = useState('')
+  const [pedidoAbierto, setPedidoAbierto] = useState(false)
 
   // Cargar los productos una sola vez, cuando se abre la página
   useEffect(() => {
@@ -95,6 +97,11 @@ function App() {
     setCarrito(carrito.filter((item) => item !== itemQuitado))
   }
 
+  function abrirPedido() {
+    setCarritoAbierto(false)
+    setPedidoAbierto(true)
+  }
+
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800">
       <Encabezado cantidad={cantidad} onAbrirCarrito={() => setCarritoAbierto(true)} />
@@ -126,6 +133,14 @@ function App() {
           onCerrar={() => setCarritoAbierto(false)}
           onCambiarCantidad={cambiarCantidad}
           onQuitar={quitarDelCarrito}
+          onPedir={abrirPedido}
+        />
+      )}
+      {pedidoAbierto && (
+        <FormularioPedido
+          items={carrito}
+          onCerrar={() => setPedidoAbierto(false)}
+          onEnviado={() => setCarrito([])}
         />
       )}
       <Aviso mensaje={aviso} onOcultar={setAviso} />
