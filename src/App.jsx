@@ -3,6 +3,7 @@ import Encabezado from './components/Encabezado.jsx'
 import Portada from './components/Portada.jsx'
 import Filtros from './components/Filtros.jsx'
 import ListaProductos from './components/ListaProductos.jsx'
+import DetalleProducto from './components/DetalleProducto.jsx'
 import PiePagina from './components/PiePagina.jsx'
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
   const [categoria, setCategoria] = useState('todas')
   const [busqueda, setBusqueda] = useState('')
   const [orden, setOrden] = useState('destacados')
+
+  // Producto abierto en la ventana de detalle (null = ninguno)
+  const [seleccionado, setSeleccionado] = useState(null)
 
   // Cargar los productos una sola vez, cuando se abre la página
   useEffect(() => {
@@ -36,6 +40,12 @@ function App() {
       return a.id - b.id
     })
 
+  // Temporal: en el paso 6 esta función agregará el producto al carrito
+  function agregarAlCarrito(producto, talla) {
+    console.log('Agregar:', producto.nombre, 'talla', talla)
+    setSeleccionado(null)
+  }
+
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800">
       <Encabezado />
@@ -50,9 +60,17 @@ function App() {
           orden={orden}
           onOrden={setOrden}
         />
-        <ListaProductos productos={visibles} cargando={cargando} />
+        <ListaProductos productos={visibles} cargando={cargando} onVerDetalle={setSeleccionado} />
       </main>
       <PiePagina />
+
+      {seleccionado && (
+        <DetalleProducto
+          producto={seleccionado}
+          onCerrar={() => setSeleccionado(null)}
+          onAgregar={agregarAlCarrito}
+        />
+      )}
     </div>
   )
 }
