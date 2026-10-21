@@ -241,10 +241,10 @@
   },
   {
     "id": 17,
-    "nombre": "Jean Grey (Phoenix)",
+    "nombre": "Gambito",
     "categoria": "X-Men",
     "precio": 940000,
-    "imagen": "/img/jean-grey.jpg",
+    "imagen": "/img/gambito.jpg",
     "tamaños": [
       "30 cm",
       "25 cm",
@@ -252,7 +252,7 @@
       "15 cm"
     ],
     "nuevo": true,
-    "descripcion": "Figura de acción estilo Hot Toys de Jean Grey con traje de Fénix y base con efecto de llamas translúcidas."
+    "descripcion": "Figura de acción estilo Hot Toys de Gambito con traje .."
   },
   {
     "id": 18,
@@ -274,7 +274,7 @@
     "nombre": "Escudo del Capitán América",
     "categoria": "accesorios",
     "precio": 450000,
-    "imagen": "/img/escudo-capitan-america.jpg",
+    "imagen": "/img/escudo.jpg",
     "tamaños": [
       "Escala 1/6",
       "Escala 1/4",
@@ -288,7 +288,7 @@
     "nombre": "Stormbreaker",
     "categoria": "accesorios",
     "precio": 520000,
-    "imagen": "/img/stormbreaker.jpg",
+    "imagen": "/img/storm-breaker.jpg",
     "tamaños": [
       "Escala 1/6",
       "Escala 1/4",
@@ -316,7 +316,7 @@
     "nombre": "Guantelete del Infinito",
     "categoria": "accesorios",
     "precio": 650000,
-    "imagen": "/img/guantelete-infinito.jpg",
+    "imagen": "/img/guantelete.jpg",
     "tamaños": [
       "Escala 1/6",
       "Escala 1/4",
@@ -324,33 +324,6 @@
     ],
     "nuevo": false,
     "descripcion": "Réplica del Guantelete del Infinito con las seis gemas luminosas y detalles dorados."
-  },
-  {
-    "id": 23,
-    "nombre": "Garras de Wolverine",
-    "categoria": "accesorios",
-    "precio": 380000,
-    "imagen": "/img/garras-wolverine.jpg",
-    "tamaños": [
-      "Escala 1/6",
-      "Escala 1/4",
-      "Tamaño real"
-    ],
-    "nuevo": false,
-    "descripcion": "Par de garras de adamantium de colección con acabado metálico cromado."
-  },
-  {
-    "id": 24,
-    "nombre": "Casco de Magneto",
-    "categoria": "accesorios",
-    "precio": 420000,
-    "imagen": "/img/casco-magneto.jpg",
-    "tamaños": [
-      "Escala 1/6",
-      "Escala 1/4",
-      "Tamaño real"
-    ],
-    "nuevo": false,
-    "descripcion": "Réplica del casco de Magneto con acabado metálico rojo y base de exhibición."
   }
+ 
 ]

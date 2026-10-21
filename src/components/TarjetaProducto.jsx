@@ -10,8 +10,7 @@ function TarjetaProducto({ producto, onVerDetalle }) {
         <Imagen
           src={producto.imagen}
           alt={producto.nombre}
-          className="h-full w-full object-cover "
-        />
+          className="h-full w-full object-cover " class="catalogo1" />
         {producto.nuevo && (
           <span
             className="boton-neon absolute top-3 left-3 rounded-full px-3 py-1 text-xs
