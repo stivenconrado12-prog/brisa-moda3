@@ -4,14 +4,13 @@ import Imagen from './Imagen.jsx'
 function TarjetaProducto({ producto, onVerDetalle }) {
   return (
     <article
-      className="tarjeta group flex flex-col overflow-hidden rounded-2xl transition duration-300
-        hover:-translate-y-1.5 hover:shadow-figura-hover"
+      className="tarjeta group flex flex-col overflow-hidden rounded-2xl transition hover:shadow-figura-hover"
     >
       <div className="relative aspect-square overflow-hidden bg-medianoche-900">
         <Imagen
           src={producto.imagen}
           alt={producto.nombre}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover "
         />
         {producto.nuevo && (
           <span

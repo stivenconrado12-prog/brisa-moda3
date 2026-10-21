@@ -28,7 +28,7 @@ function Portada() {
             Ver colección
           </a>
         </div>
-        <div className="marco-galaxia flotar mx-auto w-full max-w-3xl">
+        <div className="marco-galaxia mx-auto w-full max-w-3xl">
           <Imagen
             src="/img/portada.jpg"
             alt="Portada de la colección FIGURAMA"

@@ -47,7 +47,6 @@
 
 /* ---------- Base ---------- */
 html {
-  scroll-behavior: smooth;
   color-scheme: dark;
 }
 
@@ -89,27 +88,6 @@ body::after {
     radial-gradient(2px 2px at 90px 340px, #fff, transparent);
   background-size: 480px 400px;
   opacity: 0.85;
-  will-change: opacity;
-  animation: parpadeo 5s ease-in-out infinite alternate;
-}
-
-@keyframes parpadeo {
-  from { opacity: 0.4; }
-  to   { opacity: 0.95; }
-}
-
-@keyframes giro {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::after { animation: none; }
-  .flotar, .marco-galaxia::before { animation: none !important; }
 }
 
 h1, h2, h3 {
@@ -167,12 +145,11 @@ h1, h2, h3 {
   background: linear-gradient(135deg, #7e22ce, #bf40ff);
   color: #fff;
   box-shadow: 0 0 18px -2px rgb(191 64 255 / 0.55);
-  transition: box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+  transition: box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .boton-neon:hover:not(:disabled) {
   box-shadow: 0 0 30px 2px rgb(191 64 255 / 0.85);
-  transform: translateY(-1px);
   filter: brightness(1.1);
 }
 
@@ -227,8 +204,6 @@ h1, h2, h3 {
   inset: -60%;
   z-index: -1;
   background: conic-gradient(from 0deg, #7e22ce, #030208, #bf40ff, #030208, #4f46e5, #030208, #7e22ce);
-  animation: giro 12s linear infinite;
-  will-change: transform;
 }
 
 .marco-galaxia > img {
@@ -236,8 +211,6 @@ h1, h2, h3 {
   border-radius: calc(1.5rem - 3px);
   background: #05030d;
 }
-
-.flotar { animation: flotar 6s ease-in-out infinite; }
 
 /* ---------- Pie de página ---------- */
 footer {
