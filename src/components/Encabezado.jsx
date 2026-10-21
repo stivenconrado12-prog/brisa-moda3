@@ -1,7 +1,7 @@
 function Encabezado({ cantidad, onAbrirCarrito }) {
   return (
     <header
-      className="sticky top-0 z-30 border-b border-marca-500/30 bg-nieve-50/70 backdrop-blur-md"
+      className="sticky top-0 z-30 border-b border-marca-500/30 bg-nieve-50/95"
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <a href="#" className="font-titulo text-2xl font-bold text-white">

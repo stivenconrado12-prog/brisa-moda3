@@ -55,16 +55,10 @@ body {
   min-height: 100vh;
   color: var(--color-hielo-100);
   font-family: var(--font-cuerpo);
-  /* Nebulosas púrpura sobre negro */
-  background:
-    radial-gradient(ellipse 80% 55% at 15% 0%, rgb(124 58 237 / 0.35), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 100% 35%, rgb(192 38 211 / 0.22), transparent 60%),
-    radial-gradient(ellipse 80% 60% at 0% 100%, rgb(79 70 229 / 0.28), transparent 60%),
-    var(--color-nieve-50);
-  background-attachment: fixed;
+  background-color: var(--color-nieve-50);
 }
 
-/* Estrellas (dos capas con parpadeo y deriva lenta) */
+/* Capa fija 1: nebulosas púrpura (estática = cero costo al hacer scroll) */
 body::before,
 body::after {
   content: '';
@@ -72,9 +66,18 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 body::before {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 0%, rgb(124 58 237 / 0.35), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 35%, rgb(192 38 211 / 0.22), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 0% 100%, rgb(79 70 229 / 0.28), transparent 60%);
+}
+
+/* Capa fija 2: estrellas. Solo anima opacity (la GPU lo hace sin repintar) */
+body::after {
   background-image:
     radial-gradient(1px 1px at 20px 30px, #fff, transparent),
     radial-gradient(1px 1px at 120px 80px, #fff, transparent),
@@ -82,34 +85,17 @@ body::before {
     radial-gradient(1px 1px at 60px 180px, #fff, transparent),
     radial-gradient(1px 1px at 260px 40px, #ddd6fe, transparent),
     radial-gradient(1.5px 1.5px at 310px 210px, #fff, transparent),
-    radial-gradient(1px 1px at 170px 260px, #f5d0fe, transparent);
-  background-size: 340px 300px;
-  opacity: 0.8;
-  animation: parpadeo 6s ease-in-out infinite alternate;
-}
-
-body::after {
-  background-image:
-    radial-gradient(2px 2px at 90px 60px, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 330px 120px, #c4b5fd, transparent),
-    radial-gradient(2px 2px at 200px 330px, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 450px 260px, #f0abfc, transparent),
-    radial-gradient(1px 1px at 520px 40px, #fff, transparent);
-  background-size: 560px 420px;
-  opacity: 0.7;
-  animation:
-    parpadeo 4s ease-in-out infinite alternate-reverse,
-    deriva 240s linear infinite;
+    radial-gradient(2px 2px at 450px 260px, #f0abfc, transparent),
+    radial-gradient(2px 2px at 90px 340px, #fff, transparent);
+  background-size: 480px 400px;
+  opacity: 0.85;
+  will-change: opacity;
+  animation: parpadeo 5s ease-in-out infinite alternate;
 }
 
 @keyframes parpadeo {
-  from { opacity: 0.35; }
+  from { opacity: 0.4; }
   to   { opacity: 0.95; }
-}
-
-@keyframes deriva {
-  from { background-position: 0 0; }
-  to   { background-position: -560px 420px; }
 }
 
 @keyframes giro {
@@ -122,8 +108,8 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before, body::after { animation: none; }
-  .flotar { animation: none !important; }
+  body::after { animation: none; }
+  .flotar, .marco-galaxia::before { animation: none !important; }
 }
 
 h1, h2, h3 {
@@ -157,8 +143,7 @@ h1, h2, h3 {
 
 /* Tarjeta de vidrio oscuro */
 .tarjeta {
-  background: linear-gradient(160deg, rgb(24 12 52 / 0.75), rgb(5 3 13 / 0.85));
-  backdrop-filter: blur(8px);
+  background: linear-gradient(160deg, #170c34, #07040f);
   border: 1px solid rgb(168 85 247 / 0.25);
   box-shadow: var(--shadow-figura);
 }
@@ -233,6 +218,7 @@ h1, h2, h3 {
   padding: 3px;
   overflow: hidden;
   isolation: isolate;
+  transform: translateZ(0);
 }
 
 .marco-galaxia::before {
@@ -241,7 +227,8 @@ h1, h2, h3 {
   inset: -60%;
   z-index: -1;
   background: conic-gradient(from 0deg, #7e22ce, #030208, #bf40ff, #030208, #4f46e5, #030208, #7e22ce);
-  animation: giro 10s linear infinite;
+  animation: giro 12s linear infinite;
+  will-change: transform;
 }
 
 .marco-galaxia > img {

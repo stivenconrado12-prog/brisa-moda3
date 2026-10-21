@@ -5,7 +5,7 @@ function Carrito({ items, onCerrar, onCambiarCantidad, onQuitar, onPedir }) {
   const total = items.reduce((suma, item) => suma + item.precio * item.cantidad, 0)
 
   return (
-    <div className="fixed inset-0 z-40 flex justify-end bg-black/70 backdrop-blur-sm" onClick={onCerrar}>
+    <div className="fixed inset-0 z-40 flex justify-end bg-black/70" onClick={onCerrar}>
       <aside
         className="panel-galaxia flex h-full w-full max-w-md flex-col rounded-none border-r-0"
         onClick={(e) => e.stopPropagation()}

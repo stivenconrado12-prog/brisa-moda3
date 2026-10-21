@@ -7,7 +7,8 @@ function Portada() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full
-          bg-marca-600/30 blur-3xl"
+          "
+        style={{ background: 'radial-gradient(circle, rgb(147 51 234 / 0.35), transparent 70%)' }}
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
         <div>
