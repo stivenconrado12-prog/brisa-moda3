@@ -18,7 +18,7 @@ function PiePagina() {
         </div>
         <div>
           <p className="font-semibold text-white">Escríbenos</p>
-          <p>WhatsApp: 300 123 4567</p>
+          <p>WhatsApp: 304 451 0263</p>
           <p>hola@figurama.ejemplo</p>
         </div>
       </div>
