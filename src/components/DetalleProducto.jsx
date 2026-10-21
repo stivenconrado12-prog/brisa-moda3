@@ -1,45 +1,46 @@
 import { useState } from 'react'
 import { pesos } from '../utils/formato.js'
+import Imagen from './Imagen.jsx'
 
 function DetalleProducto({ producto, onCerrar, onAgregar }) {
-  // Talla elegida por el cliente ('' = todavía no ha elegido)
-  const [talla, setTalla] = useState('')
+  // Tamaño elegido por el cliente ('' = todavía no ha elegido)
+  const [tamano, setTamano] = useState('')
 
   return (
     <div
-      className="fixed inset-0 z-40 flex items-center justify-center bg-black/50 p-4"
+      className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
       onClick={onCerrar}
     >
       <div
-        className="grid w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-xl
+        className="panel-galaxia grid max-h-full w-full max-w-3xl overflow-y-auto rounded-2xl
           md:grid-cols-2"
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={producto.imagen} alt={producto.nombre} className="aspect-square w-full" />
+        <Imagen src={producto.imagen} alt={producto.nombre} className="aspect-square w-full object-cover" />
         <div className="flex flex-col gap-4 p-6">
           <div className="flex items-start justify-between gap-4">
-            <h3 className="font-titulo text-2xl font-bold text-mar-900">{producto.nombre}</h3>
+            <h3 className="font-titulo text-2xl font-bold text-white">{producto.nombre}</h3>
             <button
               onClick={onCerrar}
               aria-label="Cerrar"
-              className="text-3xl leading-none text-stone-400 hover:text-stone-700"
+              className="text-3xl leading-none text-hielo-400 hover:text-white"
             >
               ×
             </button>
           </div>
-          <p className="text-2xl font-bold text-marca-600">{pesos(producto.precio)}</p>
-          <p className="text-stone-600">{producto.descripcion}</p>
+          <p className="texto-galaxia text-2xl font-bold">{pesos(producto.precio)}</p>
+          <p className="text-hielo-300">{producto.descripcion}</p>
           <div>
-            <p className="mb-2 text-sm font-semibold">Talla</p>
+            <p className="mb-2 text-sm font-semibold text-white">Tamaño</p>
             <div className="flex flex-wrap gap-2">
-              {producto.tallas.map((t) => (
+              {producto.tamaños.map((t) => (
                 <button
                   key={t}
-                  onClick={() => setTalla(t)}
-                  className={`min-w-12 rounded-lg border px-3 py-2 text-sm font-medium ${
-                    talla === t
-                      ? 'border-mar-700 bg-mar-700 text-white'
-                      : 'border-stone-300 hover:border-mar-700'
+                  onClick={() => setTamano(t)}
+                  className={`min-w-16 rounded-lg px-3 py-2 text-sm font-medium transition ${
+                    tamano === t
+                      ? 'boton-neon'
+                      : 'bg-black/40 text-hielo-300 ring-1 ring-marca-500/40 hover:ring-neon-500'
                   }`}
                 >
                   {t}
@@ -48,12 +49,11 @@ function DetalleProducto({ producto, onCerrar, onAgregar }) {
             </div>
           </div>
           <button
-            disabled={!talla}
-            onClick={() => onAgregar(producto, talla)}
-            className="mt-auto rounded-full bg-marca-500 py-3 font-semibold text-white
-              hover:bg-marca-600 disabled:cursor-not-allowed disabled:bg-stone-300"
+            disabled={!tamano}
+            onClick={() => onAgregar(producto, tamano)}
+            className="boton-neon mt-auto rounded-full py-3 font-semibold"
           >
-            {talla ? 'Agregar al carrito' : 'Elige una talla'}
+            {tamano ? 'Agregar al carrito' : 'Elige un tamaño'}
           </button>
         </div>
       </div>

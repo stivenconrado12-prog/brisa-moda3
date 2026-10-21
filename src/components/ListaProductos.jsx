@@ -2,13 +2,13 @@ import TarjetaProducto from './TarjetaProducto.jsx'
 
 function ListaProductos({ productos, cargando, onVerDetalle }) {
   if (cargando) {
-    return <p className="py-16 text-center text-stone-500">Cargando productos…</p>
+    return <p className="py-16 text-center text-hielo-300">Cargando productos…</p>
   }
 
   if (productos.length === 0) {
     return (
-      <p className="py-16 text-center text-stone-500">
-        No encontramos productos con esos filtros.
+      <p className="py-16 text-center text-hielo-300">
+        No encontramos figuras con esos filtros.
       </p>
     )
   }

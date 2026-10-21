@@ -1,30 +1,34 @@
 import { pesos } from '../utils/formato.js'
+import Imagen from './Imagen.jsx'
 
 function TarjetaProducto({ producto, onVerDetalle }) {
   return (
     <article
-      className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200
-        transition hover:-translate-y-1 hover:shadow-lg"
+      className="tarjeta group flex flex-col overflow-hidden rounded-2xl transition duration-300
+        hover:-translate-y-1.5 hover:shadow-figura-hover"
     >
-      <div className="relative">
-        <img src={producto.imagen} alt={producto.nombre} className="aspect-square w-full" />
+      <div className="relative aspect-square overflow-hidden bg-medianoche-900">
+        <Imagen
+          src={producto.imagen}
+          alt={producto.nombre}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
         {producto.nuevo && (
           <span
-            className="absolute top-3 left-3 rounded-full bg-mar-700 px-3 py-1 text-xs
-              font-semibold text-white"
+            className="boton-neon absolute top-3 left-3 rounded-full px-3 py-1 text-xs
+              font-semibold"
           >
             Nuevo
           </span>
         )}
       </div>
       <div className="flex flex-1 flex-col gap-1 p-4">
-        <p className="text-xs tracking-wide text-stone-500 uppercase">{producto.categoria}</p>
-        <h3 className="font-semibold">{producto.nombre}</h3>
-        <p className="text-lg font-bold text-marca-600">{pesos(producto.precio)}</p>
+        <p className="text-xs tracking-widest text-neon-400 uppercase">{producto.categoria}</p>
+        <h3 className="font-cuerpo text-base font-semibold text-white">{producto.nombre}</h3>
+        <p className="text-lg font-bold text-hielo-300">{pesos(producto.precio)}</p>
         <button
           onClick={() => onVerDetalle(producto)}
-          className="mt-auto rounded-full border border-mar-700 py-2 text-sm font-semibold
-            text-mar-700 transition hover:bg-mar-700 hover:text-white"
+          className="boton-borde mt-auto rounded-full py-2 text-sm font-semibold"
         >
           Ver detalle
         </button>

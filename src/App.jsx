@@ -11,8 +11,12 @@ import PiePagina from './components/PiePagina.jsx'
 
 // Lee el carrito guardado en el navegador (o una lista vacía si no hay nada)
 function carritoGuardado() {
-  const texto = localStorage.getItem('carrito')
-  return texto ? JSON.parse(texto) : []
+  try {
+    const texto = localStorage.getItem('carrito-figurama')
+    return texto ? JSON.parse(texto) : []
+  } catch {
+    return []
+  }
 }
 
 function App() {
@@ -46,13 +50,13 @@ function App() {
 
   // Guardar el carrito en el navegador cada vez que cambie
   useEffect(() => {
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+    localStorage.setItem('carrito-figurama', JSON.stringify(carrito))
   }, [carrito])
 
   // Productos que se muestran según los filtros elegidos
   const texto = busqueda.trim().toLowerCase()
   const visibles = productos
-    .filter((p) => categoria === 'todas' || p.categoria === categoria)
+    .filter((p) => categoria === 'todas' || p.categoria.toLowerCase() === categoria)
     .filter((p) => p.nombre.toLowerCase().includes(texto))
     .sort((a, b) => {
       if (orden === 'menor') return a.precio - b.precio
@@ -60,11 +64,11 @@ function App() {
       return a.id - b.id
     })
 
-  // Total de unidades (para el número rojo del encabezado)
+  // Total de unidades (para el número del encabezado)
   const cantidad = carrito.reduce((suma, item) => suma + item.cantidad, 0)
 
-  function agregarAlCarrito(producto, talla) {
-    const existe = carrito.find((item) => item.id === producto.id && item.talla === talla)
+  function agregarAlCarrito(producto, tamano) {
+    const existe = carrito.find((item) => item.id === producto.id && item.tamano === tamano)
     if (existe) {
       // Ya estaba en el carrito: solo se aumenta la cantidad
       setCarrito(
@@ -76,13 +80,13 @@ function App() {
         nombre: producto.nombre,
         precio: producto.precio,
         imagen: producto.imagen,
-        talla,
+        tamano,
         cantidad: 1,
       }
       setCarrito([...carrito, nuevo])
     }
     setSeleccionado(null)
-    setAviso(`${producto.nombre} (talla ${talla}) se agregó al carrito`)
+    setAviso(`${producto.nombre} (${tamano}) se agregó al carrito`)
   }
 
   function cambiarCantidad(itemCambiado, cambio) {
@@ -103,11 +107,11 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-800">
+    <div className="min-h-screen">
       <Encabezado cantidad={cantidad} onAbrirCarrito={() => setCarritoAbierto(true)} />
       <Portada />
       <main id="catalogo" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-10">
-        <h2 className="font-titulo text-3xl font-bold text-mar-900">Catálogo</h2>
+        <h2 className="font-titulo text-3xl font-bold"><span className="texto-galaxia">Catálogo</span></h2>
         <Filtros
           categoria={categoria}
           onCategoria={setCategoria}

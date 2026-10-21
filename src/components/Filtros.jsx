@@ -1,7 +1,8 @@
 const CATEGORIAS = [
   { valor: 'todas', nombre: 'Todo' },
-  { valor: 'hombre', nombre: 'Hombre' },
-  { valor: 'mujer', nombre: 'Mujer' },
+  { valor: 'marvel', nombre: 'Marvel' },
+  { valor: 'dc', nombre: 'DC' },
+  { valor: 'x-men', nombre: 'X-Men' },
   { valor: 'accesorios', nombre: 'Accesorios' },
 ]
 
@@ -15,8 +16,8 @@ function Filtros({ categoria, onCategoria, busqueda, onBusqueda, orden, onOrden 
             onClick={() => onCategoria(c.valor)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition ${
               categoria === c.valor
-                ? 'bg-mar-700 text-white'
-                : 'bg-white text-stone-700 ring-1 ring-stone-300 hover:bg-stone-100'
+                ? 'boton-neon'
+                : 'bg-nieve-100/70 text-hielo-300 ring-1 ring-marca-500/30 hover:text-white hover:ring-neon-500'
             }`}
           >
             {c.nombre}
@@ -28,16 +29,15 @@ function Filtros({ categoria, onCategoria, busqueda, onBusqueda, orden, onOrden 
           type="search"
           value={busqueda}
           onChange={(e) => onBusqueda(e.target.value)}
-          placeholder="Buscar prenda…"
-          aria-label="Buscar prenda"
-          className="w-full rounded-full border border-stone-300 bg-white px-4 py-2 text-sm
-            outline-none focus:border-mar-700 md:w-56"
+          placeholder="Buscar figura…"
+          aria-label="Buscar figura"
+          className="campo w-full rounded-full px-4 py-2 text-sm md:w-56"
         />
         <select
           value={orden}
           onChange={(e) => onOrden(e.target.value)}
           aria-label="Ordenar"
-          className="rounded-full border border-stone-300 bg-white px-3 py-2 text-sm"
+          className="campo rounded-full px-3 py-2 text-sm"
         >
           <option value="destacados">Destacados</option>
           <option value="menor">Menor precio</option>
@@ -49,4 +49,3 @@ function Filtros({ categoria, onCategoria, busqueda, onBusqueda, orden, onOrden 
 }
 
 export default Filtros
-

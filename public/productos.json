@@ -1,175 +1,356 @@
 [
   {
     "id": 1,
-    "nombre": "Guayabera de lino",
-    "categoria": "hombre",
-    "precio": 159000,
-    "imagen": "/img/guayabera.svg",
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
+    "nombre": "Doctor Doom",
+    "categoria": "Marvel",
+    "precio": 980000,
+    "imagen": "/img/doctor-doom.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": true,
-    "descripcion": "Guayabera clásica de lino con alforzas y cuatro bolsillos. Fresca y elegante para eventos de día."
+    "descripcion": "Figura de acción coleccionable estilo Hot Toys de Victor von Doom, el villano de Marvel, con capa de tela y armadura detallada."
   },
   {
     "id": 2,
-    "nombre": "Camiseta de algodón",
-    "categoria": "hombre",
-    "precio": 45000,
-    "imagen": "/img/camiseta.svg",
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
+    "nombre": "Thanos",
+    "categoria": "Marvel",
+    "precio": 1250000,
+    "imagen": "/img/thanos.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
-    "nuevo": false,
-    "descripcion": "Camiseta de algodón peinado con cuello redondo. Ideal para el día a día en la ciudad."
+    "nuevo": true,
+    "descripcion": "Figura de acción estilo Hot Toys de Thanos con el Guantelete del Infinito y articulaciones de alta precisión."
   },
   {
     "id": 3,
-    "nombre": "Bermuda de dril",
-    "categoria": "hombre",
-    "precio": 89000,
-    "imagen": "/img/bermuda.svg",
-    "tallas": [
-      "28",
-      "30",
-      "32",
-      "34"
+    "nombre": "Iron Man Mark 85",
+    "categoria": "Marvel",
+    "precio": 1100000,
+    "imagen": "/img/iron-man.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": false,
-    "descripcion": "Bermuda de dril con bolsillos laterales y bota a la altura de la rodilla."
+    "descripcion": "Figura de acción estilo Hot Toys de Iron Man con armadura metálica y luces LED en el reactor y los ojos."
   },
   {
     "id": 4,
-    "nombre": "Pantalón de lino",
-    "categoria": "hombre",
-    "precio": 135000,
-    "imagen": "/img/pantalon-lino.svg",
-    "tallas": [
-      "28",
-      "30",
-      "32",
-      "34"
+    "nombre": "Doctor Strange",
+    "categoria": "Marvel",
+    "precio": 890000,
+    "imagen": "/img/doctor-strange.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": false,
-    "descripcion": "Pantalón de lino con pretina elástica y cordón. Liviano y cómodo para el calor."
+    "descripcion": "Figura de acción estilo Hot Toys del Hechicero Supremo con Capa de Levitación y efectos de hechizo intercambiables."
   },
   {
     "id": 5,
-    "nombre": "Vestido floral",
-    "categoria": "mujer",
-    "precio": 149000,
-    "imagen": "/img/vestido-floral.svg",
-    "tallas": [
-      "XS",
-      "S",
-      "M",
-      "L"
+    "nombre": "Thor",
+    "categoria": "Marvel",
+    "precio": 920000,
+    "imagen": "/img/thor.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
-    "nuevo": true,
-    "descripcion": "Vestido largo de viscosa con estampado de flores tropicales y tiras ajustables."
+    "nuevo": false,
+    "descripcion": "Figura de acción estilo Hot Toys de Thor, el dios del trueno, con Mjolnir, Stormbreaker y capa de tela."
   },
   {
     "id": 6,
-    "nombre": "Blusa campesina",
-    "categoria": "mujer",
-    "precio": 79000,
-    "imagen": "/img/blusa-campesina.svg",
-    "tallas": [
-      "XS",
-      "S",
-      "M",
-      "L"
+    "nombre": "Spider-Man",
+    "categoria": "Marvel",
+    "precio": 850000,
+    "imagen": "/img/spider-man.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": false,
-    "descripcion": "Blusa de hombros descubiertos con bordado artesanal en el escote."
+    "descripcion": "Figura de acción estilo Hot Toys de Spider-Man con traje de tela texturizada y manos intercambiables."
   },
   {
     "id": 7,
-    "nombre": "Falda midi plisada",
-    "categoria": "mujer",
-    "precio": 99000,
-    "imagen": "/img/falda-midi.svg",
-    "tallas": [
-      "XS",
-      "S",
-      "M",
-      "L"
+    "nombre": "Batman",
+    "categoria": "DC",
+    "precio": 950000,
+    "imagen": "/img/batman.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
-    "nuevo": false,
-    "descripcion": "Falda midi de cintura alta con pliegues. Combina con blusas y camisetas."
+    "nuevo": true,
+    "descripcion": "Figura de acción estilo Hot Toys del Caballero de la Noche con capa de tela y gadgets del cinturón."
   },
   {
     "id": 8,
-    "nombre": "Short de lino",
-    "categoria": "mujer",
-    "precio": 72000,
-    "imagen": "/img/short-lino.svg",
-    "tallas": [
-      "XS",
-      "S",
-      "M",
-      "L"
+    "nombre": "Flash",
+    "categoria": "DC",
+    "precio": 870000,
+    "imagen": "/img/flash.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
-    "nuevo": false,
-    "descripcion": "Short de lino de tiro alto con lazo en la cintura."
+    "nuevo": true,
+    "descripcion": "Figura de acción estilo Hot Toys de Flash, el hombre más rápido del mundo, con efectos de rayos y base dinámica."
   },
   {
     "id": 9,
-    "nombre": "Sombrero vueltiao",
-    "categoria": "accesorios",
-    "precio": 180000,
-    "imagen": "/img/sombrero-vueltiao.svg",
-    "tallas": [
-      "Única"
+    "nombre": "Superman",
+    "categoria": "DC",
+    "precio": 900000,
+    "imagen": "/img/superman.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
-    "nuevo": true,
-    "descripcion": "Sombrero tradicional tejido en caña flecha por artesanos de Tuchín, Córdoba."
+    "nuevo": false,
+    "descripcion": "Figura de acción estilo Hot Toys del Hombre de Acero con capa de tela y múltiples manos intercambiables."
   },
   {
     "id": 10,
-    "nombre": "Mochila wayuu",
-    "categoria": "accesorios",
-    "precio": 210000,
-    "imagen": "/img/mochila-wayuu.svg",
-    "tallas": [
-      "Única"
+    "nombre": "Joker",
+    "categoria": "DC",
+    "precio": 880000,
+    "imagen": "/img/joker.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": false,
-    "descripcion": "Mochila tejida a mano por artesanas wayuu de La Guajira, con diseños geométricos únicos."
+    "descripcion": "Figura de acción estilo Hot Toys del Príncipe Payaso del Crimen con traje de tela y accesorios icónicos."
   },
   {
     "id": 11,
-    "nombre": "Gafas de sol",
-    "categoria": "accesorios",
-    "precio": 65000,
-    "imagen": "/img/gafas-sol.svg",
-    "tallas": [
-      "Única"
+    "nombre": "Wonder Woman",
+    "categoria": "DC",
+    "precio": 890000,
+    "imagen": "/img/wonder-woman.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": false,
-    "descripcion": "Gafas de sol con filtro UV400 y montura liviana."
+    "descripcion": "Figura de acción estilo Hot Toys de Wonder Woman con espada, escudo y Lazo de la Verdad."
   },
   {
     "id": 12,
-    "nombre": "Sandalias de cuero",
-    "categoria": "accesorios",
-    "precio": 115000,
-    "imagen": "/img/sandalias-cuero.svg",
-    "tallas": [
-      "36",
-      "37",
-      "38",
-      "39",
-      "40",
-      "41"
+    "nombre": "Aquaman",
+    "categoria": "DC",
+    "precio": 860000,
+    "imagen": "/img/aquaman.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
     ],
     "nuevo": false,
-    "descripcion": "Sandalias de cuero natural hechas en Colombia, con suela antideslizante."
+    "descripcion": "Figura de acción estilo Hot Toys del rey de Atlantis con tridente y armadura de escamas detalladas."
+  },
+  {
+    "id": 13,
+    "nombre": "Wolverine",
+    "categoria": "X-Men",
+    "precio": 930000,
+    "imagen": "/img/wolverine.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
+    ],
+    "nuevo": true,
+    "descripcion": "Figura de acción estilo Hot Toys de Wolverine con garras de adamantium retráctiles y manos intercambiables."
+  },
+  {
+    "id": 14,
+    "nombre": "Magneto",
+    "categoria": "X-Men",
+    "precio": 910000,
+    "imagen": "/img/magneto.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
+    ],
+    "nuevo": true,
+    "descripcion": "Figura de acción estilo Hot Toys del Amo del Magnetismo con capa de tela, casco removible y efectos de energía."
+  },
+  {
+    "id": 15,
+    "nombre": "Cyclops",
+    "categoria": "X-Men",
+    "precio": 860000,
+    "imagen": "/img/cyclops.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
+    ],
+    "nuevo": false,
+    "descripcion": "Figura de acción estilo Hot Toys del líder de los X-Men con visor intercambiable y efecto de rayo óptico."
+  },
+  {
+    "id": 16,
+    "nombre": "Storm",
+    "categoria": "X-Men",
+    "precio": 880000,
+    "imagen": "/img/storm.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
+    ],
+    "nuevo": false,
+    "descripcion": "Figura de acción estilo Hot Toys de Tormenta con capa de tela y efectos de relámpagos y viento."
+  },
+  {
+    "id": 17,
+    "nombre": "Jean Grey (Phoenix)",
+    "categoria": "X-Men",
+    "precio": 940000,
+    "imagen": "/img/jean-grey.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
+    ],
+    "nuevo": true,
+    "descripcion": "Figura de acción estilo Hot Toys de Jean Grey con traje de Fénix y base con efecto de llamas translúcidas."
+  },
+  {
+    "id": 18,
+    "nombre": "Capitán América",
+    "categoria": "Marvel",
+    "precio": 890000,
+    "imagen": "/img/capitan-america.jpg",
+    "tamaños": [
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "15 cm"
+    ],
+    "nuevo": false,
+    "descripcion": "Figura de acción estilo Hot Toys del Capitán América con traje texturizado, casco y manos intercambiables."
+  },
+  {
+    "id": 19,
+    "nombre": "Escudo del Capitán América",
+    "categoria": "accesorios",
+    "precio": 450000,
+    "imagen": "/img/escudo-capitan-america.jpg",
+    "tamaños": [
+      "Escala 1/6",
+      "Escala 1/4",
+      "Tamaño real"
+    ],
+    "nuevo": true,
+    "descripcion": "Réplica coleccionable del escudo de vibranium del Capitán América, con acabado metálico y correas ajustables."
+  },
+  {
+    "id": 20,
+    "nombre": "Stormbreaker",
+    "categoria": "accesorios",
+    "precio": 520000,
+    "imagen": "/img/stormbreaker.jpg",
+    "tamaños": [
+      "Escala 1/6",
+      "Escala 1/4",
+      "Tamaño real"
+    ],
+    "nuevo": true,
+    "descripcion": "Réplica del hacha forjada en Nidavellir para Thor, con detalles grabados y mango envuelto en cuero."
+  },
+  {
+    "id": 21,
+    "nombre": "Mjolnir",
+    "categoria": "accesorios",
+    "precio": 480000,
+    "imagen": "/img/mjolnir.jpg",
+    "tamaños": [
+      "Escala 1/6",
+      "Escala 1/4",
+      "Tamaño real"
+    ],
+    "nuevo": false,
+    "descripcion": "Réplica del martillo de Thor con acabado metálico envejecido y runas grabadas."
+  },
+  {
+    "id": 22,
+    "nombre": "Guantelete del Infinito",
+    "categoria": "accesorios",
+    "precio": 650000,
+    "imagen": "/img/guantelete-infinito.jpg",
+    "tamaños": [
+      "Escala 1/6",
+      "Escala 1/4",
+      "Tamaño real"
+    ],
+    "nuevo": false,
+    "descripcion": "Réplica del Guantelete del Infinito con las seis gemas luminosas y detalles dorados."
+  },
+  {
+    "id": 23,
+    "nombre": "Garras de Wolverine",
+    "categoria": "accesorios",
+    "precio": 380000,
+    "imagen": "/img/garras-wolverine.jpg",
+    "tamaños": [
+      "Escala 1/6",
+      "Escala 1/4",
+      "Tamaño real"
+    ],
+    "nuevo": false,
+    "descripcion": "Par de garras de adamantium de colección con acabado metálico cromado."
+  },
+  {
+    "id": 24,
+    "nombre": "Casco de Magneto",
+    "categoria": "accesorios",
+    "precio": 420000,
+    "imagen": "/img/casco-magneto.jpg",
+    "tamaños": [
+      "Escala 1/6",
+      "Escala 1/4",
+      "Tamaño real"
+    ],
+    "nuevo": false,
+    "descripcion": "Réplica del casco de Magneto con acabado metálico rojo y base de exhibición."
   }
 ]

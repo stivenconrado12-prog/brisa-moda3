@@ -4,8 +4,7 @@ import { pesos } from '../utils/formato.js'
 // Número de WhatsApp de la tienda: 57 (Colombia) + celular, sin espacios
 const WHATSAPP_TIENDA = '573001234567'
 
-const estiloCampo =
-  'rounded-lg border border-stone-300 px-3 py-2 font-normal outline-none focus:border-mar-700'
+const estiloCampo = 'campo rounded-lg px-3 py-2 font-normal'
 
 function FormularioPedido({ items, onCerrar, onEnviado }) {
   const [datos, setDatos] = useState({
@@ -44,10 +43,10 @@ function FormularioPedido({ items, onCerrar, onEnviado }) {
     // Arma el mensaje del pedido: una línea por producto y luego los datos
     const lineas = items.map((item) => {
       const subtotal = pesos(item.precio * item.cantidad)
-      return `- ${item.cantidad} x ${item.nombre} (talla ${item.talla}): ${subtotal}`
+      return `- ${item.cantidad} x ${item.nombre} (${item.tamano}): ${subtotal}`
     })
     const mensaje = [
-      '¡Hola, Brisa Moda! Quiero hacer este pedido:',
+      '¡Hola, FIGURAMA! Quiero hacer este pedido:',
       ...lineas,
       `Total: ${pesos(total)}`,
       `Nombre: ${datos.nombre}`,
@@ -63,39 +62,38 @@ function FormularioPedido({ items, onCerrar, onEnviado }) {
 
   return (
     <div
-      className="fixed inset-0 z-40 flex items-center justify-center bg-black/50 p-4"
+      className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
       onClick={onCerrar}
     >
       <div
-        className="max-h-full w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-xl"
+        className="panel-galaxia max-h-full w-full max-w-lg overflow-y-auto rounded-2xl p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {enviado ? (
           <div className="py-6 text-center">
-            <h2 className="font-titulo text-2xl font-bold text-mar-900">¡Pedido enviado!</h2>
-            <p className="mt-2 text-stone-600">
+            <h2 className="font-titulo text-2xl font-bold text-white">¡Pedido enviado!</h2>
+            <p className="mt-2 text-hielo-300">
               Se abrió WhatsApp con el resumen de tu pedido. Envía el mensaje y te confirmaremos
               la entrega.
             </p>
             <button
               onClick={onCerrar}
-              className="mt-6 rounded-full bg-mar-700 px-6 py-3 font-semibold text-white
-                hover:bg-mar-900"
+              className="boton-neon mt-6 rounded-full px-6 py-3 font-semibold"
             >
               Seguir comprando
             </button>
           </div>
         ) : (
           <form onSubmit={enviar} noValidate className="flex flex-col gap-4">
-            <h2 className="font-titulo text-2xl font-bold text-mar-900">Datos de entrega</h2>
-            <p className="rounded-lg bg-marca-50 p-3 text-sm">
+            <h2 className="font-titulo text-2xl font-bold text-white">Datos de entrega</h2>
+            <p className="rounded-lg bg-marca-500/15 p-3 text-sm ring-1 ring-marca-500/30">
               Total del pedido: <strong>{pesos(total)}</strong>
             </p>
 
             <label className="flex flex-col gap-1 text-sm font-medium">
               Nombre completo
               <input name="nombre" value={datos.nombre} onChange={cambiar} className={estiloCampo} />
-              {errores.nombre && <span className="text-red-600">{errores.nombre}</span>}
+              {errores.nombre && <span className="text-pink-400">{errores.nombre}</span>}
             </label>
 
             <label className="flex flex-col gap-1 text-sm font-medium">
@@ -108,7 +106,7 @@ function FormularioPedido({ items, onCerrar, onEnviado }) {
                 placeholder="3001234567"
                 className={estiloCampo}
               />
-              {errores.celular && <span className="text-red-600">{errores.celular}</span>}
+              {errores.celular && <span className="text-pink-400">{errores.celular}</span>}
             </label>
 
             <label className="flex flex-col gap-1 text-sm font-medium">
@@ -117,10 +115,10 @@ function FormularioPedido({ items, onCerrar, onEnviado }) {
                 name="direccion"
                 value={datos.direccion}
                 onChange={cambiar}
-                placeholder="Cra. 3 # 35-20, Manga"
+                placeholder="Calle de la Moneda # 5-20, Centro"
                 className={estiloCampo}
               />
-              {errores.direccion && <span className="text-red-600">{errores.direccion}</span>}
+              {errores.direccion && <span className="text-pink-400">{errores.direccion}</span>}
             </label>
 
             <label className="flex flex-col gap-1 text-sm font-medium">
@@ -137,15 +135,13 @@ function FormularioPedido({ items, onCerrar, onEnviado }) {
               <button
                 type="button"
                 onClick={onCerrar}
-                className="flex-1 rounded-full border border-stone-300 py-3 font-semibold
-                  hover:bg-stone-100"
+                className="boton-borde flex-1 rounded-full py-3 font-semibold"
               >
                 Volver
               </button>
               <button
                 type="submit"
-                className="flex-1 rounded-full bg-green-600 py-3 font-semibold text-white
-                  hover:bg-green-700"
+                className="boton-neon flex-1 rounded-full py-3 font-semibold"
               >
                 Enviar por WhatsApp
               </button>

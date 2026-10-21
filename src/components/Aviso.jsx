@@ -13,8 +13,8 @@ function Aviso({ mensaje, onOcultar }) {
   return (
     <div
       role="status"
-      className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-mar-900 px-6 py-3
-        text-sm font-medium text-white shadow-lg"
+      className="boton-neon fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full px-6 py-3
+        text-sm font-medium"
     >
       ✓ {mensaje}
     </div>

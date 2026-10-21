@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#4c1d95"/>
+      <stop offset="0.5" stop-color="#14082e"/>
+      <stop offset="1" stop-color="#030208"/>
+    </radialGradient>
+    <radialGradient id="planeta" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#e9d5ff"/>
+      <stop offset="0.4" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#2e1065"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <g fill="#fff">
+    <circle cx="90" cy="110" r="2"/><circle cx="240" cy="60" r="1.5"/><circle cx="420" cy="140" r="2"/>
+    <circle cx="640" cy="90" r="1.5"/><circle cx="730" cy="260" r="2"/><circle cx="130" cy="330" r="1.5"/>
+    <circle cx="560" cy="360" r="1.5"/><circle cx="80" cy="560" r="2"/><circle cx="700" cy="620" r="2"/>
+    <circle cx="300" cy="700" r="1.5"/><circle cx="520" cy="740" r="2"/><circle cx="660" cy="470" r="1.5"/>
+  </g>
+  <ellipse cx="400" cy="400" rx="250" ry="52" fill="none" stroke="#c084fc" stroke-opacity="0.55" stroke-width="3" transform="rotate(-18 400 400)"/>
+  <circle cx="400" cy="400" r="130" fill="url(#planeta)"/>
+  <path d="M150 460 A250 52 0 0 0 650 340" fill="none" stroke="#e9d5ff" stroke-opacity="0.7" stroke-width="3" transform="rotate(-18 400 400)" stroke-dasharray="0"/>
+  <text x="400" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="34" letter-spacing="8" fill="#d8b4fe" fill-opacity="0.8">PRÓXIMAMENTE</text>
+</svg>
